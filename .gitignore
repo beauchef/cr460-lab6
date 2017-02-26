@@ -1,0 +1,4 @@
+# Compiled files
+account.json
+*.tfstate
+*.tfstate.backup
