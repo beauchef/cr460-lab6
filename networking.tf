@@ -73,17 +73,17 @@ resource "google_dns_managed_zone" "beauchef" {
 }
 
 resource "google_dns_record_set" "jump" {
-    name = "jump.${google_dns_managed_zone.beauchef.dns_name}"
+    name = "jump.beauchef.cr460lab.com."
     type = "A"
     ttl = 300
-    managed_zone = "${google_dns_managed_zone.beauchef.name}"
+    managed_zone = "cr460lab"
     rrdatas = ["${google_compute_instance.jumphost.network_interface.0.access_config.0.assigned_nat_ip}"]
 }
 
 resource "google_dns_record_set" "vault" {
-    name = "vault.${google_dns_managed_zone.beauchef.dns_name}"
+    name = "vault.beauchef.cr460lab.com."
     type = "A"
     ttl = 300
-    managed_zone = "${google_dns_managed_zone.beauchef.name}"
+    managed_zone = "cr460lab"
     rrdatas = ["${google_compute_instance.vaulthost.network_interface.0.access_config.0.assigned_nat_ip}"]
 }
