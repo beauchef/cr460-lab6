@@ -30,8 +30,6 @@ resource "google_compute_instance" "vaulthost" {
         subnetwork = "${google_compute_subnetwork.public.name}"
         access_config {}
     }
-
-    metadata_startup_script = "apt-get -y install apache2 && systemctl start apache2"
 }
 
 resource "google_compute_instance" "master" {
