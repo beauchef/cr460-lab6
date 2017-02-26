@@ -67,11 +67,6 @@ resource "google_compute_firewall" "workload-backend-firewall" {
     target_tags = ["backend-node"]
 }
 
-resource "google_dns_managed_zone" "beauchef" {
-  name     = "beauchef"
-  dns_name = "beauchef.cr460lab.com."
-}
-
 resource "google_dns_record_set" "jump" {
     name = "jump.beauchef.cr460lab.com."
     type = "A"
